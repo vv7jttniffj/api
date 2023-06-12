@@ -1,0 +1,7 @@
+requests
+colorama
+json
+urllib.parse
+flask
+unquote
+CORS
