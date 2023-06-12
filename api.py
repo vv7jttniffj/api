@@ -101,7 +101,7 @@ def chk(lista):
             else:
                 return f' DEAD ❌ =>   {lista}  Message =>  {status} - @predator_incoming  '
         else:
-            returnf ' DEAD ❌ =>   {lista}  Message =>  Token has expired , Please inform the owner - @predator_incoming  '
+            return f' DEAD ❌ =>   {lista}  Message =>  Token has expired , Please inform the owner - @predator_incoming  '
     except:
         return f' DEAD ❌ =>   {lista}  Message =>  Something went wrong :??  '
 
