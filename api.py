@@ -97,13 +97,13 @@ def chk(lista):
             status = response_dict2['paymentMethod']['threeDSecureInfo']['status']
 
             if status == 'authenticate_successful' or status == 'authenticate_attempt_successful':
-                return f' PASSED ✅ =>   {lista}  Message =>  {status} - @predator_incoming  '
+                return ' PASSED ✅ =>   {lista}  Message =>  {status} - @predator_incoming  '
             else:
                 return f' DEAD ❌ =>   {lista}  Message =>  {status} - @predator_incoming  '
         else:
-            return f' DEAD ❌ =>   {lista}  Message =>  Token has expired , Please inform the owner - @predator_incoming  '
+            return ' DEAD ❌ =>   {lista}  Message =>  Token has expired , Please inform the owner - @predator_incoming  '
     except:
-        return f' DEAD ❌ =>   {lista}  Message =>  Something went wrong :??  '
+        return ' DEAD ❌ =>   {lista}  Message =>  Something went wrong :??  '
 
 
 @ app.route('/api', methods=['GET'])
