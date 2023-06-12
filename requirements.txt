@@ -3,5 +3,5 @@ colorama
 
 
 flask
-unquote
+
 CORS
