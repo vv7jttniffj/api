@@ -1,7 +1,7 @@
 requests
 colorama
 
-
+flask_cors
 flask
 
 CORS
